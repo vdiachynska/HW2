@@ -16,12 +16,6 @@ n=4
 print('Hello! This is a game for training your memory.\nFind all pairs of matching cards on 4*4 field.\n'
       'Max tries is 30.')
 a = [['X']*n for i in range(n)]
-print('  A B C D')
-for i in range(n):
-    print(i+1, end=' ')
-    for j in range(n):
-        print(a[i][j], end=' ')
-    print()
 
 symb=['@','#','$','%','&','*','?','+']
 x1,x2,y1,y2=[1]*4
@@ -43,11 +37,15 @@ guesses=0
 good_guesses=0
 
 while True:
-    for i in a1:
-        print(*i)
     if guesses==30:
         print('Sorry, you lost... try again.')
         exit()
+    print('  A B C D')
+for i in range(n):
+    print(i+1, end=' ')
+    for j in range(n):
+        print(a[i][j], end=' ')
+    print()
     coords=[]
     while check_coords(coords)!=True:
         coords=[]
